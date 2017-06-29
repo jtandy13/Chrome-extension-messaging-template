@@ -1,0 +1,22 @@
+{
+  "name": "Chrome extension comms template",
+  "version": "1.0",
+  "description": "Gives an example of long-lived connections between the extension, content script, and page.",
+  "manifest_version": 2,
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "matches": [
+          "<all_urls>"
+      ],
+      "js": [
+          "contentScript.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["injectable.js"]
+}
